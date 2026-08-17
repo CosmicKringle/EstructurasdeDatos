@@ -6,8 +6,11 @@ class Matriz:
        self.columnas = columnas
        self.elementos = [[0] * columnas for _ in range(filas)]
  
-   def llenar(self, valores):
-       self.elementos = valores
+   def llenar(self):
+       print(f"\nIngrese los valores de una matriz de {self.filas}x{self.columnas}:")
+       for f in range(self.filas):
+           for c in range(self.columnas):
+            self.elementos[f][c] = int(input(f"Elemento [{f}][{c}]: "))
  
    def suma(self, otra):
        resultado = Matriz(self.filas, self.columnas)
@@ -34,13 +37,21 @@ class Matriz:
        for fila in self.elementos:
            print(fila)
  
+filas = int(input("Ingrese el número de filas: "))
+columnas = int(input("Ingrese el número de columnas: "))
+
+m1 = Matriz(filas, columnas)
+m1.llenar()
  
-m1 = Matriz(3, 3)
-m1.llenar([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+m2 = Matriz(filas, columnas)
+m2.llenar()
  
-m2 = Matriz(3, 3)
-m2.llenar([[9, 8, 7], [6, 5, 4], [3, 2, 1]])
- 
+print("\nSuma:")
 m1.suma(m2).mostrar()
+
+print("\nResta:")
 m1.resta(m2).mostrar()
+
+escalar = int(input("\nIngrese un escalar para multiplicar la primera matriz: "))
+print("\nProducto de escalar:")
 m1.multiplicarEscalar(3).mostrar()
