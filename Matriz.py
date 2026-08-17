@@ -1,4 +1,4 @@
-#Aranza Aguilar, Ariana Chinchilla, Erwin Torres Matriz de 3x3
+#Aranza Aguilar, Ariana Chinchilla, Erwin Torres
 
 class Matriz:
    def __init__(self, filas, columnas):
